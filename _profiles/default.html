@@ -3,7 +3,7 @@
 # The human-friendly name of the profile. Whenever you're asked for the profile
 # ID, it refers to the name of the profile file — in this case, "default".
 #
-name: "My website"
+name: "SiRMonkeys"
 
 #
 # The default profile will be the one shown when accessing the root URL of your
@@ -25,7 +25,9 @@ parameters:
   connectivity: "Cable"
   location: "Dulles:Chrome"
   runs: 1
-  url: "https://my-website.com"
+  firstViewOnly: true
+  url: "https://sirmonkeys.com"
+  video: true
 
 #
 # Performance budgets are defined with a metric id, a max/min allowed value
@@ -45,4 +47,15 @@ parameters:
 #    metric: firstPaint
 #    max: 2000
 #    alerts: ["slackAlert"]
+
+budgets:
+  -
+    metric: fullyLoaded
+    max: 5000
+    alerts: ['mainAlert']
+  -
+    metric: firstPaint
+    max: 3000
+    alerts: ['mainAlert']
+
 ---
